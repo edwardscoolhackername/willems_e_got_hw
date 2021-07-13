@@ -105,8 +105,19 @@ main {
   top: 0;
   background-color: rgba(0,0,0,0.8);
   color: white;
+  display: none;
 }
 
+.showlightbox {
+  display: block;
+}
+
+.closebutton {
+  float: right;
+  font-size: 3em;
+  cursor: pointer;
+  padding-right: 0.6em;
+}
 
 video {
 	width: 80%;
