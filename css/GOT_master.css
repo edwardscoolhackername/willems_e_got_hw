@@ -121,6 +121,6 @@ main {
 
 video {
 	width: 80%;
-	margin-top: 10%;
+	margin: 1% auto 0 auto;
 	border: thin solid #949393;
 }
