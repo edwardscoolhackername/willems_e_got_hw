@@ -3,7 +3,8 @@
   const sigils = document.querySelectorAll(".sigilContainer"),
         lbox = document.querySelector(".lightbox"),
         lboxclose = lbox.querySelector(".closebutton"),
-        housevideo = document.querySelector('video');
+        housevideo = document.querySelector('video'),
+        bannerbox = document.querySelector("#houseImages");
 
   //functions, what do you want to happen
   function showbox() {
@@ -29,8 +30,18 @@
     lbox.classList.remove('showlightbox');
   }
 
+  function bannerscroll() {
+    //move the banner to match the flag we click on //
+    // each banner is 600px wide //
+    const bannerwidth = 600;
+    let multiplier = this.dataset.offset,
+        finaloffset = bannerwidth * multiplier;
+
+    bannerbox.style.right = finaloffset + "px";
+  }
+
   //event listeners, what makes the function start
-  sigils.forEach(sigil => sigil.addEventListener('click', showbox));
+  sigils.forEach(sigil => sigil.addEventListener('click', bannerscroll));
   lboxclose.addEventListener('click', closelightbox);
   housevideo.addEventListener('ended', closelightbox);
 })();
