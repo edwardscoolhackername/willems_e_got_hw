@@ -28,6 +28,7 @@ main {
 	top:30px;
 }
 
+
 #imageContainer {
 	width:600px;
 	height:360px;
@@ -38,7 +39,7 @@ main {
 
 #houseImages {
   position:relative;
-  width:4000px; 
+  width:4000px;
   transition: all 0.5s; }
 #houseImages img { float:left; }
 
@@ -120,6 +121,13 @@ main {
   font-size: 3em;
   cursor: pointer;
   padding-right: 0.6em;
+}
+
+.house-info {
+  color: #fff;
+  font-size: 1.8em;
+  line-height: 1;
+  width: 75%;
 }
 
 video {
