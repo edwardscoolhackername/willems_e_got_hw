@@ -17,7 +17,7 @@ body { background-image:url(../images/grungeBG.jpg);
 h1 {
 	font-family: 'GOT_font';
 	color:white;
-	margin-top:30px;
+	margin:30px;
 	font-size:1.25em;
 }
 
@@ -131,9 +131,10 @@ main {
 
 .house-info {
   color: #fff;
-  font-size: 1.8em;
+  font-size: 1.5em;
   line-height: 1;
   width: 75%;
+  margin: 0 auto;
 }
 
 video {
