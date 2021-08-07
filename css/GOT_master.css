@@ -17,7 +17,7 @@ body { background-image:url(../images/grungeBG.jpg);
 h1 {
 	font-family: 'GOT_font';
 	color:white;
-	margin-top:30px;
+	margin:30px;
 	font-size:1.25em;
 }
 
@@ -131,13 +131,62 @@ main {
 
 .house-info {
   color: #fff;
-  font-size: 1.8em;
+  font-size: 1.5em;
   line-height: 1;
   width: 75%;
+  margin: 0 auto;
 }
 
 video {
 	width: 80%;
 	margin: 1% auto 0 auto;
 	border: thin solid #949393;
+  max-width: 1000px;
+}
+.vidcontrols {
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.vidcontrols button {
+  background-color: #000;
+  border: 1px solid #fff;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.playimage {
+  background-image: url(../images/buttonplay.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.pauseimage {
+  background-image: url(../images/buttonpause.png);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.progressbox {
+   margin-left: 10px;
+}
+#timer {
+  background-color: #000;
+  border: 1px solid #fff;
+  height: 30px;
+  width: 50px;
+  margin: 10px;
+  padding: 10px;
+  color: #fff;
+  font-size: 1em;
+}
+progress {
+  width: 500px;
+}
+progress[value] {
+  border: none;
+  color: #aaa;
+  height: 20px;
 }

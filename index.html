@@ -44,7 +44,16 @@
     <section class="lightbox">
       <span class="closebutton">x</span>
 
-      <video src="video/House-Stark.mp4" controls></video>
+      <video src="video/House-Stark.mp4"></video>
+      <div class="vidcontrols">
+        <button class="playbutton pauseimage"></button>
+
+        <div class="progressbox">
+          <label id="timer" for="progress" role="timer">00:00</label>
+          <progress id="progress" value="0" max="100">
+             <span id="progress-bar"></span>
+          </progress>
+        </div>
     </section>
 
 </main>  <!--end mainContainer-->

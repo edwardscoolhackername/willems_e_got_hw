@@ -5,8 +5,11 @@
         lboxclose = lbox.querySelector(".closebutton"),
         housevideo = document.querySelector('video'),
         bannerbox = document.querySelector("#houseImages"),
-        house = document.querySelector(".housename");
-        houseinfo = document.querySelector(".house-info")
+        house = document.querySelector(".housename"),
+        houseinfo = document.querySelector(".house-info"),
+        playbutton = document.querySelector(".playbutton"),
+        progress = document.querySelector("progress"),
+        timer = document.querySelector("#timer");
 
   //put the House info into an array
   const housedata = [
@@ -45,7 +48,9 @@
     housevideo.load();
 
     lbox.classList.add("showlightbox");
+    playbutton.classList.add('pauseimage')
     housevideo.play();
+    videoprogress();
   }
 
   function closelightbox() {
@@ -72,11 +77,37 @@
     houseinfo.textContent = housedata[targetIndex][1];
   }
 
-//HOMEWORK -- Make bannerscroll happen first, THEN showbox for each
-//ALSO -- make the last two houses, Frey and Targeryen
+  function pausevideo() {
+    if (playbutton.classList.contains("pauseimage")) {
+      housevideo.pause();
+      playbutton.classList.remove('pauseimage');
+      playbutton.classList.add('playimage');
+    }
+    else if (playbutton.classList.contains("playimage")) {
+      housevideo.play();
+      playbutton.classList.remove('playimage');
+      playbutton.classList.add('pauseimage');
+    }
+  }
+
+  function videoprogress() {
+    setInterval(function () {
+      progress.value = Math.round(
+        (housevideo.currentTime / housevideo.duration) * 100
+      );
+      var minutes = Math.floor(housevideo.currentTime / 60),
+          seconds = Math.floor(housevideo.currentTime - minutes * 60);
+        if (seconds < 10) {
+          seconds = "0" + seconds; }
+
+      timer.innerHTML = minutes + ":" + seconds;
+    });
+  }
+
   //event listeners, what makes the function start
   sigils.forEach(sigil => sigil.addEventListener('click', bannerscroll));
   sigils.forEach(sigil => sigil.addEventListener('click', showbox));
   lboxclose.addEventListener('click', closelightbox);
   housevideo.addEventListener('ended', closelightbox);
+  playbutton.addEventListener('click', pausevideo);
 })();
